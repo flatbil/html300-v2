@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6+ Lesson Responses</title>
+</head>
+<body>
+    <!-- 
+        William Almond
+        HTML5 300
+        Lesson 1
+    -->
+    <h1>Lesson 1 Number Manipulation Using ES6+</h1>
+    <form id="first-form">    
+        <label for="name">Type your Name here to see your name get reversed:
+            <input type="text" id="name" name="name" required>
+        </label>
+        <button type="submit">Submit</button>
+        <p id="output1"></p>
+
+    </form>
+    <script>
+        let form1 = document.getElementById("first-form");
+        let input1 = document.getElementById("name");
+        let output1 = document.getElementById("output1");
+
+        form1.addEventListener("submit", event => {
+        event.preventDefault(); // prevent form submission
+
+        const inputValue = input1.value;
+        const reversedValue = inputValue.split("").reverse().join("");
+
+        output1.textContent = `${reversedValue} ... Boy does that look silly!`;
+        });
+    </script>
+    <form id="second-form">
+        <label for="email"> Turn your email address into an array... for fun.
+            <input type="email" id="email" name="email" required>
+        </label>
+        <button type="submit">Submit</button>
+        <p id="output2"></p>
+    </form>
+    <script>
+        form2 = document.getElementById("second-form");
+        input2 = document.getElementById("email");
+        output2 = document.getElementById("output2");
+
+        form2.addEventListener("submit", event => {
+        event.preventDefault(); // prevent form submission
+
+        const inputValue = input2.value;
+        //This function takes the string, which in this case is an email and makes it an array
+        //and writes it to the p tag output2
+        const reversedValue = Array.from(inputValue);
+
+        output2.textContent = `[${reversedValue}] See! Wasn't that fun!?`;
+        });
+    </script>
+    <form id="third-form">
+        <label for="input3">We have an array of numbers, <br> Enter a number and multiply each element by that number.
+            <input type="number" id="input3" name="input3">
+        </label>
+        <button type="submit">Submit</button>
+        <p id="output3"></p>
+    </form>
+    <script>
+        const numbers = [1, 2, 3, 4];
+        const form3 = document.getElementById('third-form');
+        const input3 = document.getElementById('input3');
+        const output3 = document.getElementById('output3');
+
+        form3.addEventListener("submit", event => {
+            event.preventDefault(); // prevent form submission
+            const doubled = numbers.map(num => num * input3.value);
+            output3.textContent = `[${doubled.join(", ")}] Oh my, it looks so diffent!`; // Output: the elements of the array multiplied by the input value.
+        });
+        
+    </script>
+    <form id="fourth-form">
+        <label for="rhyme">Enter any word and you will get a word that rhymes with it!
+            <input type="text" id="rhyme" name="rhyme">
+        </label>
+        <button type="submit">Submit</button>
+        <p id="output4"></p>
+    </form>
+    <!-- This script allows the user to input a word and get a rhyming word in return, just for fun I am using datamuse api. -->
+    <script>
+        const form4 = document.getElementById('fourth-form');
+        const input4 = document.getElementById('rhyme');
+        const output4 = document.getElementById('output4');
+        
+
+        form4.addEventListener("submit", event => {
+            event.preventDefault(); // prevent form submission.
+            getRhymingWord(); //call the function in a static way as I am not going to use it anywhere else.
+            async function getRhymingWord() {
+            const inputValue = input4.value.toLowerCase();
+            // access datamuse api that returns a Response object of rhyming words
+                const response = await fetch(`https://api.datamuse.com/words?rel_rhy=${inputValue}`);
+                if (response.ok) {
+                    //convert the Response into a json object
+                    const words = await response.json();
+                    // use a random number to select the index and select the word
+                    const rhymingWord = words[Math.floor(Math.random() * words.length)].word;
+                    // print the word input value and the word to the string and set it to the paragraph text.
+                    output4.textContent= `A word that rhymes with ${inputValue} is ${rhymingWord}`;
+                } else {
+                    // throw an error if the response was not okay.
+                    throw new Error("Network response was not ok");
+                }
+            }
+        });
+    </script>
+
+    <!-- This example shows entering student data into an object and accessing that object data. -->
+    <form id="five-form">
+        <label for="student">Ender in your student's data and we will show you how it will appear in our database. <br>
+            Student Name:
+            <input type="text" id="student" name="student">
+        </label>
+        <label for="age">Age:
+            <input type="number" id="age" name="age">
+        </label>
+        <label for="gender">Gender:
+            <input type="text" name="gender" id="gender">
+        </label>
+        <button type="submit">Submit</button>
+        <p id="output5"></p>
+    </form>
+    <script>
+        const form5 = document.getElementById('five-form');
+        const input5Name = document.getElementById('student');
+        const input5Age = document.getElementById('age');
+        const input5Gender = document.getElementById('gender');
+
+        const output5 = document.getElementById('output5');
+
+        form5.addEventListener("submit", event => {
+            event.preventDefault();
+            
+            if (!input5Name.value || !input5Age.value || !input5Gender.value) { // check if any input field is empty
+                error.textContent = 'Please fill in all fields.'; // display error message
+            } else {
+                // form is valid, submit it
+                const person = {
+                    name: input5Name.value,
+                    age: input5Age.value,
+                    gender: input5Gender.value
+                };
+                const values = Object.entries(person);
+                output5.textContent = `[${values}] \nYour student's record as it appears in our database.`;
+                console.log(values);
+            }
+
+
+
+        })
+    </script>
+
+</body>
+</html>
