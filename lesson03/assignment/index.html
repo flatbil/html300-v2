@@ -6,12 +6,49 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Fun with Constructors!</title>
   <link rel="stylesheet" href="./css/style.css">
-	<script src="index.js"></script>
 </head>
 <body>
-	<h1>Assignment 3</h1>
+	<section class="main" id="card-backing">
+	<script>
+		fetch('data/data.json')
+			.then(response => response.json())
+			.then(mydata => {
+				const data = mydata;
+				console.log(data);
+
+				const businessCardsContainer = document.getElementById('card-backing');
+
+				for (let i = 0; i < data.length; i++) {
+				const person = data[i];
+				const businessCard = document.createElement('div');
+				businessCard.classList.add('business-card');
+
+				businessCard.innerHTML = `
+				<div id="content-container">
+                	<div id="headshot-cell">
+						<img src="img/headshot.jpg" alt="Picture of Paolo, a white dog wearing a bow tie">
+						<h1>${person.name}</h1>
+						<p>${person.jobTitle} at ${person.company}</p>
+					</div>
+                	<div id="profile-cell">
+						<p>Experience: ${person.experience}</p>
+						<p>School: ${person.school}, Major: ${person.major}</p>
+						<p>Email: ${person.email}</p>
+						<p>LinkedIn: ${person.linkedInUrl}</p>
+						<p>Code languages: ${person.codeLanguages.join(', ')}</p>
+					</div>
+				</div>
+				`;
+
+				businessCardsContainer.appendChild(businessCard);
+				}
+
+			});
+
+	</script>
+	<!-- <h1>Assignment 3</h1>
 	<section class="template-hook">
 		Fill this section with the templated components
-	</section>
+	</section> -->
 </body>
 </html>

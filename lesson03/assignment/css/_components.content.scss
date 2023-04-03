@@ -7,11 +7,63 @@ html {
 *:before {
     box-sizing: inherit;
 }
+body{
+    margin: 2rem;
+
+}
 
 .main {
     padding: 2rem;
+    border-radius: 1rem;
+    background-color: $dark-gray;
+    
+}
+#content-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(3rem, auto));
+    border-radius: 2rem;
+    padding: 2rem;
+    background-color: $white;
+    #headshot-cell {
+        margin: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        img {
+            border-radius: 100%;
+            width: 100%;
+        }
+        h1 {
+            color: $title-text;
+        }
+        p {
+            color: $title-text;
+            font-size: x-large;
+            font-style: italic;
+        }
+
+    }
+    #profile-cell {
+        padding: 2rem;
+        height: 100%;
+        background-color: $gray;
+        span {
+            color: $title-text;
+        }
+    }
+    @media screen and (max-width: 480px){
+        #headshot-cell{
+            h1{
+                font-size: 4vw;
+            }
+            
+            p {
+                font-size: 4vw;
+            }
+        }
+        }
+        
 }
 
-h1 {
-    color: $red;  
-}
+
