@@ -7,12 +7,20 @@
 	<title>Fun with Constructors!</title>
   <link rel="stylesheet" href="./css/style.css">
 </head>
+<!-- 
+	Will Almond
+	HTML5300
+	Assignment lesson03
+-->
 <body>
 	<section class="main" id="card-backing">
 	<script>
+		// Grab the json file
+		// convert to JSON object using the response method
 		fetch('data/data.json')
 			.then(response => response.json())
 			.then(mydata => {
+				// assign the json data to the data variable.
 				const data = mydata;
 				console.log(data);
 
@@ -22,7 +30,7 @@
 				const person = data[i];
 				const businessCard = document.createElement('div');
 				businessCard.classList.add('business-card');
-
+				// use innerhtml to create the html dynamically
 				businessCard.innerHTML = `
 				<div id="content-container">
                 	<div id="headshot-cell">
@@ -39,7 +47,7 @@
 					</div>
 				</div>
 				`;
-
+				// assign the html to the single business card div
 				businessCardsContainer.appendChild(businessCard);
 				}
 
