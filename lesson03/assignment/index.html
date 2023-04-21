@@ -6,12 +6,59 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Fun with Constructors!</title>
   <link rel="stylesheet" href="./css/style.css">
-	<script src="index.js"></script>
 </head>
+<!-- 
+	Will Almond
+	HTML5300
+	Assignment lesson03
+-->
 <body>
-	<h1>Assignment 3</h1>
+	<section class="main" id="card-backing">
+	<script>
+		// Grab the json file
+		// convert to JSON object using the response method
+		fetch('data/data.json')
+			.then(response => response.json())
+			.then(mydata => {
+				// assign the json data to the data variable.
+				const data = mydata;
+				console.log(data);
+
+				const businessCardsContainer = document.getElementById('card-backing');
+
+				for (let i = 0; i < data.length; i++) {
+				const person = data[i];
+				const businessCard = document.createElement('div');
+				businessCard.classList.add('business-card');
+				// use innerhtml to create the html dynamically
+				businessCard.innerHTML = `
+				<div id="content-container">
+                	<div id="headshot-cell">
+						<img src="img/headshot.jpg" alt="Picture of Paolo, a white dog wearing a bow tie">
+						<h1>${person.name}</h1>
+						<p>${person.jobTitle} at ${person.company}</p>
+					</div>
+                	<div id="profile-cell">
+						<p>Experience: ${person.experience}</p>
+						<p>School: ${person.school}, Major: ${person.major}</p>
+						<p>Email: ${person.email}</p>
+						<ul>
+							<li><img src="img/linkedin.svg" alt="icon image">LinkedIn: <a>${person.linkedInUrl}</a></li>
+						</ul>
+						<p>Code languages: ${person.codeLanguages.join(', ')}</p>
+					</div>
+				</div>
+				`;
+				// assign the html to the single business card div
+				businessCardsContainer.appendChild(businessCard);
+				}
+
+			});
+
+	</script>
+	<!-- <h1>Assignment 3</h1>
 	<section class="template-hook">
 		Fill this section with the templated components
-	</section>
+	</section> -->
 </body>
 </html>
