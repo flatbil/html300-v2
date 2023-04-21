@@ -42,7 +42,9 @@
 						<p>Experience: ${person.experience}</p>
 						<p>School: ${person.school}, Major: ${person.major}</p>
 						<p>Email: ${person.email}</p>
-						<p>LinkedIn: ${person.linkedInUrl}</p>
+						<ul>
+							<li><img src="img/linkedin.svg" alt="icon image">LinkedIn: <a>${person.linkedInUrl}</a></li>
+						</ul>
 						<p>Code languages: ${person.codeLanguages.join(', ')}</p>
 					</div>
 				</div>
