@@ -11,13 +11,13 @@
   <main class="main">
     <header class="common-header"></header>
     <script>
-      const header = document.querySelector('header');
-        fetch('common-header.html')
-          .then(response => response.text())
-          .then(data => {
-            header.innerHTML = data;
-          });
-      </script>
+    const header = document.querySelector('header');
+      fetch('common-header.html')
+        .then(response => response.text())
+        .then(data => {
+          header.innerHTML = data;
+        });
+    </script>
   </main>
 </body>
 </html>
