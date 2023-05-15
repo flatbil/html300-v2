@@ -5,12 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="css/style.css">
-  <title>About</title>
+  <title>Properties</title>
 </head>
-<!-- Almond Properties About page gives some relevant and interesting details about the office. -->
+<!-- Almond Properties Properties page that displays current listings on the website -->
 <body>
   <main class="main">
     <header class="common-header"></header>
+    <!-- This script fetches the common header class from commmon-header.html 
+    this allows for editing the header in just one locaiton rather than on all pages. -->
     <script>
     const header = document.querySelector('header');
       fetch('common-header.html')
@@ -19,7 +21,7 @@
           header.innerHTML = data;
         });
     </script>
-    <h2>This page has history of the office listed</h2>
+    <h2>Properties listed here</h2>
   </main>
 </body>
 </html>

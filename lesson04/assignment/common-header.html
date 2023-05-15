@@ -7,27 +7,23 @@
     <title>Document</title>
 </head>
 <body>
-    <header class="common-header">
-        <div class="container">
-          <div class="header-top">
-            <a href="#" class="logo-link"><img src="img/AP_LogoNonTrans.png" alt="Company Logo"></a>
-            <button class="menu-toggle" aria-label="Menu">
-              <span class="sr-only">Menu</span>
-              <span class="bar"></span>
-              <span class="bar"></span>
-              <span class="bar"></span>
-            </button>
-          </div>
-          <nav class="navigation">
-            <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Properties</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Contact</a></li>
-            </ul>
-          </nav>
+  <header class="common-header">
+      <nav class="top-nav">
+        <div class="logo">
+          <a href="#" class="logo-link"><img src="img/AP_LogoNonTrans.png" alt="Company Logo"></a>
         </div>
-      </header>
+        <input id="menu-toggle" type="checkbox" />
+        <label class='menu-button-container' for="menu-toggle">
+          <div class='menu-button'></div>
+        </label>
+        <ul class="menu">
+          <li class="dropdown_item-1"><a href="index.html">Home</a></li>
+          <li class="dropdown_item-2"><a href="properties.html">Properties</a></li>
+          <li class="dropdown_item-3"><a href="about.html">About</a></li>
+          <li class="dropdown_item-4"><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
       
 </body>
 </html>
