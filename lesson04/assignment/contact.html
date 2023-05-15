@@ -5,23 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="css/style.css">
-  <title>Home</title>
+  <title>Contact</title>
 </head>
-<!-- Almond Properties home page -->
+<!-- Almond Properties Contact page for contact info -->
 <body>
   <main class="main">
     <header class="common-header"></header>
     <!-- This script fetches the common header class from commmon-header.html 
     this allows for editing the header in just one locaiton rather than on all pages. -->
     <script>
-      const header = document.querySelector('header');
-        fetch('common-header.html')
-          .then(response => response.text())
-          .then(data => {
-            header.innerHTML = data;
-          });
-      </script>
-      <h2>This is Home</h2>
+    const header = document.querySelector('header');
+      fetch('common-header.html')
+        .then(response => response.text())
+        .then(data => {
+          header.innerHTML = data;
+        });
+    </script>
+    <h2>Contact information on this page</h2>
   </main>
 </body>
 </html>
