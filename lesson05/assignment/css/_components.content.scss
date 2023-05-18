@@ -1,13 +1,83 @@
-html {
-    box-sizing: border-box;
+$color-primary: #f1352b;
+$color-secondary: #7acb00;
+$color-tertiary: #6e27c5;
+$color-accent: #f60;
+$color-dark: #150f96;
+$color-light: #fff;
+
+@mixin section {
+  padding: 10px;
+  display: flex;
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Center the content vertically */
+  text-align: center; /* Center the text content */
 }
 
-*,
-*:after,
-*:before {
-    box-sizing: inherit;
+@mixin section-heading {
+  font-size: 32px;
+  font-family: 'HelveticaNeue', 'Helvetica Neue';
+  color: $color-light;
 }
 
-.main {
-    padding: 2rem;
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: $color-primary;
+  color: $color-light;
+  @include section; /* Apply the common styles defined in the "section" mixin */
+
+  .logo {
+    /* Styles for the logo */
+  }
+}
+
+nav {
+  background-color: $color-secondary;
+  color: $color-light;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 10px;
+}
+
+main {
+  flex: 1;
+  display: grid; /* Use CSS Grid for the main content layout */
+  grid-template-columns: 1fr 2fr; /* Divide the main content into two columns */
+
+  .sidebar {
+    background-color: $color-tertiary;
+    color: $color-light;
+    @include section; /* Apply the common styles defined in the "section" mixin */
+
+    .sidebar-content {
+      /* Styles for the sidebar content */
+    }
+  }
+
+  .main-content {
+    background-color: $color-accent;
+    color: $color-light;
+    @include section; /* Apply the common styles defined in the "section" mixin */
+
+    .content {
+      /* Styles for the main content */
+    }
+  }
+}
+
+footer {
+  background-color: $color-dark;
+  color: $color-light;
+  @include section; /* Apply the common styles defined in the "section" mixin */
+
+  .footer-content {
+    /* Styles for the footer content */
+  }
 }
