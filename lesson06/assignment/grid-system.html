@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>Assignment 06 - Bootstrap 5</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+   <body>
+    <!-- Navbar comes from w3 schools -->
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="javascript:void(0)">Logo</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mynavbar">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="images.html">Images</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="accordion.html">Accordion</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="grid-system.html">Grid</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <header class="bg-primary text-light text-center py-3">
+      <!-- Main Heading -->
+      <h1>Welcome to Lesson06</h1>
+
+      <!-- Subheading or Description -->
+      <p>An Introduction to HTML and CSS</p>
+    </header>
+
+    <nav class="bg-success py-2">
+        <div class="container d-flex justify-content-evenly">
+            <!-- Navigation Items -->
+            <!-- Added different sizes that will display at different screen sizes. -->
+            <span class="px-3">Nav Item</span>
+            <span class="px-3 d-none d-sm-inline">Nav Item</span>
+            <span class="px-3 d-none d-md-inline">Nav Item</span>
+            <span class="px-3 d-none d-lg-inline">Nav Item</span>
+            <span class="px-3 d-none d-xl-inline">Nav Item</span>
+        </div>
+    </nav>
+
+
+
+        <div class="row" style="height: 100%;">
+            <aside class="col-lg-4 bg-info text-light text-center py-3">
+                <!-- Sidebar section -->
+                <div class="sidebar-content">Sidebar</div>
+            </aside>
+
+            <section class="col-lg-8 bg-warning text-light text-center py-3">
+                <!-- Main content section -->
+                <div class="main-content">Main Content</div>
+            </section>
+        </div>
+
+
+    <article class="row">
+      <section class="col-sm-4 bg-dark text-white text-center py-3">
+          Article1
+      </section>
+      <section class="col-sm-4 bg-dark text-white text-center py-3">
+          Article 2
+      </section>
+      <section class="col-sm-4 bg-dark text-white text-center py-3">
+          Article 3
+      </section>
+
+    </article>
+
+    <footer class="bg-dark text-light text-center py-3">
+        <div class="container">
+            <!-- Footer content -->
+            <div class="footer-content">Footer</div>
+        </div>
+    </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
